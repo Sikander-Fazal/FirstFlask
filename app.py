@@ -112,5 +112,5 @@ def download():
     return send_file('output_files.zip', as_attachment=True)
 
 if __name__ == '__main__':
-    port = int(os.getenv("PORT", 8080))  # Get the PORT from Railway
-    app.run(host="0.0.0.0", port=port, debug=True)  # Bind to external requests
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)  # No debug=True
